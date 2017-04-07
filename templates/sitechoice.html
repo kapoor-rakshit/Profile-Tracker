@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Choose site</title>
+</head>
+
+<body style="text-align: center;" background="{{url_for('static', filename='coding.png')}}">
+
+<form action="http://127.0.0.1:5000/results" method="post" target="_blank">
+	<legend style="font-size: 50px;color: white"><b>ProfileTracker</b></legend>
+<br>
+    <input type="text" name="user" placeholder="Enter username" style="text-align: center;width:150px;height: 30px;font-size: 17px" onfocus="this.value=''" autofocus>
+<b style="color: white;font-size: 35px">@</b>
+	<select name="site" style="height:30px;width: 150px;font-size: 20px;cursor: pointer;">
+		<option>Codechef</option>
+		<option>Hackerearth</option>
+		<option>HackerRank</option>
+		<option>SPOJ</option>
+		<option>Codeforces</option>
+		<option>Codefights</option>
+		<option>Github</option>
+		<option>LinkedIn</option>
+	</select>
+<br><br><br><br>
+    <input type="submit" name="submit" value="SUBMIT" style="height:40px;width: 25%;cursor: pointer;font-weight: bold;font-size: 20px;border: 1px solid black;">
+</form>
+</body>
+</html>

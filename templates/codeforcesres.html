@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodeforcesProfile</title>
+</head>
+<body >
+<fieldset>
+<legend><img src="{{url_for('static', filename='forces.png')}}"></legend>
+<br>
+<img src="{{pic}}" height="300px" width="300px">
+<pre style="font-style: italic;font-weight: bold;font-size: 120%;margin-top: -200pt;margin-left: 300pt">
+        Username    : {{username}}<br>
+	Rating      : {{rating}}<br>
+	Rank        : {{level}}<br>
+	Max. Rating : {{maxrating}}<br>
+	Max. Rank   : {{maxlevel}}<br>
+	AC Verdicts : {{ac}}<br>
+	Contests    : {{contests}}
+	</pre>
+</fieldset>
+<br><br>
+<fieldset>
+<pre style="font-style: italic;font-weight: bold;font-size: 120%;margin-left: 300pt">
+        email         : {{email}}<br>
+	Country       : {{country}}<br>
+	Organization  : {{org}}<br>
+	Friends       : {{friends}}<br>
+	Contributions : {{contri}}
+</pre>   
+</fieldset>
+</body>
+</html>

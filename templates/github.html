@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GithubProfile</title>
+</head>
+<body>
+<fieldset>
+<legend><img src="{{url_for('static', filename='git.png')}}"></legend>
+<img src="{{pic}}" height="300px" width="300px"><br>
+<pre style="font-style: italic;font-weight: bold;font-size: 120%;margin-top: -200pt;margin-left: 300pt">
+Username     : {{user}}<br>
+Name         : {{name}}<br>
+Organization : {{org}}<br>
+email        : {{mail}}<br>
+Summary      : {{summary}}<br>
+<a href="{{profile}}" target="_blank" style="color: red"><b>Complete Profile</b></a><br>
+Repositories : {{repo}}<br>
+Followers    : {{followers}}<br>
+</pre>
+</fieldset>
+<br>
+<fieldset>
+<table style="font-size: 120%;font-style: italic;font-weight: bold;">
+	<tr><td style="padding-bottom: 10px"><u>Repositories</u></td><td style="padding-bottom: 10px;padding-left: 30px;">Stars</td><td style="padding-bottom: 10px;padding-left: 50px;">Forks</td><td style="padding-bottom: 10px;padding-left: 70px;">Languages</td></tr>
+	{%for i in repodetails%}
+	<tr>
+	<td>{{i[0]}}</td><td style="padding-left:30px">{{i[1]}}</td><td style="padding-left:50px">{{i[2]}}</td><td style="padding-left:70px">{{i[3]}}</td>
+	</tr>
+{%endfor%}
+</table>
+
+	
+</fieldset>
+</body>
+</html>

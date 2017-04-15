@@ -35,6 +35,14 @@ def results():
         stars=[]
         forks=[]
         langs=[]
+        langset=set()
+        langct=0
+        tplist=[]
+        perclist=[]
+        langdata=[]
+        langperc={}
+        langval=[]
+
         while i<ll:
         	rp=rinfo[i]['name']
         	st=rinfo[i]['stargazers_count']
@@ -50,11 +58,25 @@ def results():
         	langstr=""
         	for key in langinfo.keys():
         		langstr+=(str(key)+" .  ")
+        		langset.add(key)
+        		langval.append(key)
+        		langct+=1
         	langs.append(langstr)
         	i+=1
 
+        for i in langset:
+        	langperc[i]=0
+        for i in langval:
+        	langperc[i]+=1
+        for i in langperc.keys():
+        	langperc[i]=((langperc[i]*100)/float(langct))
+        tplist=sorted(langperc,key=langperc.__getitem__,reverse=True)
+        for i in tplist:
+        	perclist.append(format(langperc[i],'0.2f')+" %")
+
         data=zip(reponames,stars,forks,langs)
-        return render_template('github.html',repodetails=data,user=handle,pic=pic,profile=prof,name=name,org=comp,mail=mail,summary=bio,repo=repo,followers=fol)
+        langdata=zip(tplist,perclist)
+        return render_template('github.html',langdata=langdata,repodetails=data,user=handle,pic=pic,profile=prof,name=name,org=comp,mail=mail,summary=bio,repo=repo,followers=fol)
 
 	"""if site=="Codeforces":
 		url='http://codeforces.com/api/user.info?handles='+user
